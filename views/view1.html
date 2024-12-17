@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <script src="vue.js"></script> 
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- row layer -->
+    <div id="app" style="display: flex;flex-direction: column;">
+        <div style="flex: 1;margin-top: 30px; ">
+            <template v-if="is_init_tools">
+                <!-- column layer -->
+                <div style="flex: 1;padding:4px;" v-if="!is_workfolder_init">
+                    <p>
+                        {{ lang !== 'zh-cn' ? "Can't find app.json, please initialize the workspace first" :
+                        zh["Can't find app.json, please initialize the workspace first"] }}
+                    </p>
+                    <!-- create-project -->
+                    <button @click="command('extension.FastdevPy4a.CreateProject')">
+                        {{ lang !== 'zh-cn' ? 'Create Project' : zh['Create Project'] }}
+                    </button>
+                </div>
+                <template v-else>
+                    <template v-if="adb_info.devices.length > 0">
+                        <div style="flex: 1;padding:4px;">
+                            <!-- for adb_info.devices -->
+                            <div style="font-size: 18px;">{{ lang !== 'zh-cn' ? 'Devices' : zh['Devices'] }}</div>
+                            <div v-for="device in adb_info.devices" style="display: flex;">
+                                <p>{{ device }}</p>
+                            </div>
+                        
+                        </div>
+
+                        <div style="flex: 1;padding:4px;"> 
+                            <template v-if="!is_run && app_info?.dev_mode && adb_info?.package_info && adb_info?.package_info != ''"> 
+                                <button @click="command('extension.FastdevPy4a.PatchFastRun')">
+                                    {{ lang !== 'zh-cn' ? 'FastRun' : zh['PatchFastRun'] }}
+                                </button>
+                            </template>
+                        </div>
+                        <div style="flex: 1;padding:4px;" v-if="is_workfolder_init">
+                            <template v-if="!is_run">
+                                <button @click="command('extension.FastdevPy4a.BuildInstallRun')">
+                                    {{ lang !== 'zh-cn' ? 'Build Install Run (Full Package)' :
+                                    zh['Build Install Run (Full Package)'] }}
+                                </button>
+                            </template>
+                            <template v-else>
+                                <button class="secondary">
+                                    {{ lang !== 'zh-cn' ? 'Running' : zh['Running'] }}
+                                </button>
+                            </template>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div style="flex: 1;padding:4px;">
+                            <p>{{ lang !== 'zh-cn' ? "No Devices :You need to try adb connect to connect to the device"
+                                :
+                                zh["No Devices :You need to try adb connect to connect to the device"] }}</p>
+                        </div>
+                    </template>
+                </template>
+
+            </template>
+        </div>
+        <!-- loading -->
+        <div style="flex: 1;display: flex;justify-content: center;align-items: center;z-index:999999;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: var(--vscode-editor-background);opacity:0.7;"
+            v-if="is_global_locker">
+
+            <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

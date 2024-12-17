@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- row layer -->
+    <div id="app" style="display: flex;flex-direction: column;">
+        <div style="flex: 1;" v-if="is_workfolder_init">
+            <div style="flex: 1;padding:4px;display: flex;">
+                {{ lang !== 'zh-cn' ? 'app_name' : zh['app_name'] }}
+            </div>
+            <div style="flex: 1;padding:4px;display: flex;">
+                <input type="text" style="display: flex;width: 100%;" v-model="app_info.app_name" />
+            </div>
+            <div style="flex: 1;padding:4px;display: flex;">
+                {{ lang !== 'zh-cn' ? 'package' : zh['package'] }}
+            </div>
+            <div style="flex: 1;padding:4px;display: flex;">
+                <input type="text" style="display: flex;width: 100%;" v-model="app_info.package" />
+            </div>
+            <div style="flex: 1;padding:4px;display: flex;">
+                {{ lang !== 'zh-cn' ? 'version name' : zh['version name'] }}
+            </div>
+            <div style="flex: 1;padding:4px;display: flex;">
+                <input type="text" style="display: flex;width: 100%;" v-model="app_info.version_name" />
+            </div>
+            <div style="flex: 1;padding:4px;display: flex;">
+                {{ lang !== 'zh-cn' ? 'version code' : zh['version code'] }}
+            </div>
+            <div style="flex: 1;padding:4px;display: flex;">
+                <input type="text" style="display: flex;width: 100%;" v-model="app_info.version_code" />
+            </div>
+            <div style="flex: 1;padding:4px;display: flex;">
+                {{ lang !== 'zh-cn' ? 'rootfs path' : zh['rootfs path'] }}
+            </div>
+            <div style="flex: 1;padding:4px;display: flex;">
+                <!-- <input type="text" style="display: flex;width: 100%;" v-model="app_info.rootfs" /> -->
+                <select v-model="app_info.rootfs" style="display: flex;width: 100%;">
+                    <option v-for="rootfs in rootfs_list" :value="rootfs">{{ rootfs }}</option>
+                </select>
+            </div>
+            <div style="flex: 1;padding:4px;display: flex;">
+                {{ lang !== 'zh-cn' ? 'icon text' : zh['icon text'] }}
+            </div>
+            <div style="flex: 1;padding:4px;display: flex;">
+                <input type="text" style="display: flex;width: 100%;" v-model="app_info.icon_text" />
+            </div>
+            <div style="flex: 1;padding:4px;display: flex;">
+                {{ lang !== 'zh-cn' ? 'icon' : zh['icon'] }}
+            </div>
+            <div style="flex: 1;padding:4px;display: flex;">
+                <input type="text" style="display: flex;width: 100%;" v-model="app_info.icon" />
+            </div>
+            <div style="flex: 1;padding:4px;display: flex;">
+                {{ lang !== 'zh-cn' ? 'icon preview' : zh['icon preview'] }}
+            </div>
+            <div style="flex: 1;padding:4px;display: flex;">
+                <span id="icon" style="width: 256px;height: 256px;zoom: 0.5;display: inline-flex;"
+                    v-html="service_info?.icon_raw"></span>
+            </div>
+        </div>
+
+        <div style="flex: 1;margin-top: 30px; ">
+
+            <div style="flex: 1;padding:4px;display: flex;">
+                <button @click="command('get_app_info')">
+                    {{ lang !== 'zh-cn' ? 'refresh config' : zh['refresh config'] }}
+                </button>
+                <button @click="command('save_app_info', app_info);">
+                    {{ lang !== 'zh-cn' ? 'save config' : zh['save config'] }}
+                </button>
+            </div>
+
+            <template v-if="is_init_tools">
+                <div style="flex: 1;padding:4px;display: flex;">
+                    <input style="display: flex;width: 100%;" v-model="dependency"></input>
+                    <button @click="command('extension.FastdevPy4a.DependencyInstallation')">
+                        {{ lang !== 'zh-cn' ? 'Dependency Download' : zh['Dependency Download'] }}
+                    </button>
+                </div>
+                <div style="flex: 1;padding:4px;">
+                    <button @click="command('extension.FastdevPy4a.ClearTemp')">
+                        {{ lang !== 'zh-cn' ? 'Clean up the build cache space' : zh['Clean up the build cache space'] }}
+                    </button>
+                </div>
+            </template>
+            <div style="flex: 1;padding:4px;">
+                <button @click="command('extension.FastdevPy4a.Init')">
+                    {{ lang !== 'zh-cn' ? 'Initialize tools and environment' : zh['Initialize tools and environment'] }}
+                </button>
+            </div>
+
+        </div>
+        <!-- loading -->
+        <div style="flex: 1;display: flex;justify-content: center;align-items: center;z-index:999999;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: var(--vscode-editor-background);opacity:0.7;"
+            v-if="is_global_locker">
+
+            <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

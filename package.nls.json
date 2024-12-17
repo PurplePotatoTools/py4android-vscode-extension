@@ -1,0 +1,13 @@
+{
+  "build_install_run_py4a": "build install run py4a",
+  "fastdev_py4a_cleans_temporary_build_files": "fastdev-py4a cleans temporary build files",
+  "fastdev_py4a_initialization_download_tool_dependencies": "fastdev-py4a initialization download tool dependencies",
+  "configuration_tool_directory": "configuration tool directory",
+  "extension_is_active": "extension is active",
+  "fastdev_py4a_install_dependencies": "fastdev-py4a install dependencies",
+  "fast_run_mode": "fast run mode",
+  "one_file_fast_run_mode": "one file fast run mode",
+  "debug_and_run": "debug and run",
+  "setting": "setting",
+  "save done": "save done"
+}

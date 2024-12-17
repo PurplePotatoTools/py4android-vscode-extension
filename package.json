@@ -1,0 +1,96 @@
+{
+  "name": "fastdev-py4android",
+  "displayName": "fastdev-py4android",
+  "description": "Android fast development implemented from Python.",
+  "publisher": "mz",
+  "version": "0.0.6",
+  "l10n": "./l10n",
+  "engines": {
+    "vscode": "^1.29.0"
+  },
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "fastdev-py4android",
+          "title": "fastdev",
+          "icon": "images/icon-white.png"
+        }
+      ]
+    },
+    "views": {
+      "fastdev-py4android": [
+        {
+          "id": "view1",
+          "name": "%debug_and_run%",
+          "type": "webview"
+        },
+        {
+          "id": "view2",
+          "name": "%setting%",
+          "type": "webview"
+        }
+      ]
+    },
+    "menus": {
+      "editor/title/run": [
+        {
+          "command": "extension.FastdevPy4a.OneFilePatchFastRun",
+          "group": "navigation",
+          "when": "fastpy4a.enable"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "extension.FastdevPy4a.BuildInstallRun",
+        "title": "%build_install_run_py4a%"
+      },
+      {
+        "command": "extension.FastdevPy4a.Init",
+        "title": "%fastdev_py4a_initialization_download_tool_dependencies%"
+      },
+      {
+        "command": "extension.FastdevPy4a.ClearTemp",
+        "title": "%fastdev_py4a_cleans_temporary_build_files%"
+      },
+      {
+        "command": "extension.FastdevPy4a.DependencyInstallation",
+        "title": "%fastdev_py4a_install_dependencies%"
+      },
+      {
+        "command": "extension.FastdevPy4a.PatchFastRun",
+        "title": "%fast_run_mode%"
+      },
+      {
+        "command": "extension.FastdevPy4a.OneFilePatchFastRun",
+        "title": "%one_file_fast_run_mode%",
+        "icon": "images/adb-run.svg"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "fastdev-py4android%configuration_tool_directory%",
+      "properties": {
+        "fastdev-py4android.config.tools_dir": {
+          "type": "string",
+          "default": "${userHome}/fastdev-py4android/tools",
+          "description": "fastdev-py4android%configuration_tool_directory%"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "adm-zip": "^0.5.16",
+    "axios": "^1.7.9",
+    "crypt": "^0.0.2",
+    "md5": "^2.3.0",
+    "sharp": "^0.33.5",
+    "xml2js": "^0.6.2"
+  }
+}

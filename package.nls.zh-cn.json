@@ -1,0 +1,13 @@
+{
+  "build_install_run_py4a": "构建安装运行",
+  "fastdev_py4a_cleans_temporary_build_files": "fastdev-py4a清理临时构建文件",
+  "fastdev_py4a_initialization_download_tool_dependencies": "fastdev-py4a初始化下载工具依赖",
+  "configuration_tool_directory": "配置工具目录",
+  "extension_is_active": "扩展已激活",
+  "fastdev_py4a_install_dependencies": "安装依赖",
+  "fast_run_mode": "快速运行模式",
+  "one_file_fast_run_mode": "单文件快速运行模式",
+  "debug_and_run": "调试和运行",
+  "setting": "设置",
+  "save done": "保存完成"
+}

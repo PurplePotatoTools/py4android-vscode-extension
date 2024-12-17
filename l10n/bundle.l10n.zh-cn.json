@@ -1,0 +1,23 @@
+{
+  "extension is active": "扩展已激活",
+  "clear temp done": "清理临时文件完成",
+  "create project done": "创建项目完成",
+  "file already exists": "文件已存在",
+  "initial apk": "初始化apk",
+  "create tools_dir": "创建工具目录",
+  "delete done": "删除完成",
+  "adb run done": "adb运行完成",
+  "delete": "删除",
+  "workspace": "工作区",
+  "appName": "应用名称",
+  "packageName": "包名",
+  "copy": "复制",
+  "to": "到",
+  "done": "完成",
+  "executing, please wait": "正在执行，请稍候",
+  "init done": "初始化完成",
+  "error": "错误",
+  "child process exited with code": "子进程退出码",
+  "not support platform": "暂未支持的平台",
+  "Terminal exited with undefined status": "终端退出，状态未定义"
+}
