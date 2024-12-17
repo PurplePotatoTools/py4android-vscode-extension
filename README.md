@@ -1,7 +1,7 @@
 ![image](https://github.com/user-attachments/assets/7732fc10-34e7-4665-90b5-42eb36533e37)
 
 # fastdev-py4a-vscode-extension
-借助一些非常规方式实现在vscode中使用python开发android app, 适用个人工具或者原型的快速实现, 谨慎用于生产环境, 无法在google play等应用商店发布
+借助一些非常规方式实现在vscode中使用python开发android app, 适用个人工具或者原型的快速实现和个人学习使用, 谨慎用于生产环境, 无法在google play等应用商店发布
 
 
 ## 特点/依赖
