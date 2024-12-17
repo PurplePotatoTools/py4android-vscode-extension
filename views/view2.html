@@ -8,7 +8,7 @@
 <body>
     <!-- row layer -->
     <div id="app" style="display: flex;flex-direction: column;">
-        <div style="flex: 1;" v-if="is_workfolder_init">
+        <div style="flex: 1;" v-if="is_workfolder_init && (app_info?.app_name || app_info?.package || app_info?.version_name || app_info?.version_code)">
             <div style="flex: 1;padding:4px;display: flex;">
                 {{ lang !== 'zh-cn' ? 'app_name' : zh['app_name'] }}
             </div>

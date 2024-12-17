@@ -400,21 +400,6 @@ const Utils = {
     // await Utils.callInInteractiveTerminal("sign apk", cmd);
     return cmd;
   },
-  async BuildInstallRun(apkPath, packageName, className) {
-    let cmd = `adb install -r ${apkPath}`;
-    // await Utils.callInInteractiveTerminal("adb install", cmd);
-    // await Utils.callInInteractiveTerminal(
-    //   "adb run",
-    //   `adb shell am start -n ${className}/.MainActivity`
-    // );
-    return [
-      cmd,
-      // `adb shell am start -n ${packageName}/com.mz.fastapp.MainActivity`,
-      `adb shell am start ` +
-        `-e startupType reinit` +
-        ` -n ${packageName}/${className}`,
-    ];
-  },
   async downloadFile(url, dest) {
     // 直接使用PS 的 wget命令下载
     let toolsDir = await Utils.getToolsDir();
@@ -532,7 +517,7 @@ const Utils = {
   },
   logcatShow(packageName) {
     try {
-      execSync(`adb logcat -c`);
+      execSync(`${ADB.getAdbPath()} logcat -c`);
     } catch (error) {}
     if (!Utils.logcatTerminal) {
       Utils.logcatTerminal = vscode.window.createTerminal({
@@ -542,7 +527,7 @@ const Utils = {
       Utils.logcatTerminal.show();
       try {
         Utils.logcatTerminal.sendText(
-          `adb logcat -s ${packageName} python.stdout -s ${packageName} python.stderr`
+          `${ADB.getAdbPath()} logcat -s ${packageName} python.stdout -s ${packageName} python.stderr`
         );
       } catch (error) {
         Utils.mconsole.appendLine(error);

@@ -424,7 +424,7 @@ let registerCommandFuns = {
     cmds.push(await Utils.signApk(apkPath, signedApkPath));
 
     // 安装apk
-    let cmds_ = await Utils.BuildInstallRun(
+    let cmds_ = await ADB.BuildInstallRun(
       signedApkPath,
       packageName,
       activityName
@@ -468,6 +468,9 @@ let registerCommandFuns = {
         continue;
       }
       if (element == "ppobox.exe") {
+        continue;
+      }
+      if (element == "platform-tools") {
         continue;
       }
       let src = fpath.join(tools, element);
@@ -656,6 +659,7 @@ function createSidebarPanel(context, view) {
 }
 
 function registerCoreCommand(context) {
+  ADB.init(context);
   context.subscriptions.push(
     vscode.window.registerWebviewViewProvider(
       "view1",
