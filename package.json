@@ -3,6 +3,10 @@
   "displayName": "fastdev-py4android",
   "description": "Android fast development implemented from Python.",
   "publisher": "mz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PurplePotatoTools/fastdev-py4a-vscode-extension"
+  },
   "version": "0.0.6",
   "l10n": "./l10n",
   "engines": {
@@ -17,7 +21,7 @@
       "activitybar": [
         {
           "id": "fastdev-py4android",
-          "title": "fastdev",
+          "title": "fastdev-py4a",
           "icon": "images/icon-white.png"
         }
       ]
