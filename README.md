@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/c5d16f12-191e-45f1-a5b0-a5c6c335a714)
+![image](https://github.com/user-attachments/assets/7732fc10-34e7-4665-90b5-42eb36533e37)
 
 # fastdev-py4a-vscode-extension
 Develop android Hybrid App using python in vscode.
