@@ -26,7 +26,7 @@
 
 ## 相关技术
 - Apktool解包和打包apk
-- 使用AnotherTermShellPlugin-Android10Essentials, 在Android 10以上使用shell, 无需root权限
+- 使用AnotherTermShellPlugin-Android10Essentials, 在Android 10以上通过proot使用shell, 无需root权限
 - flatbuffers作为python和java之间的通信协议
 - PictureSelector作为图片选择器
 - 来自arm64v8/python:3.11-slim-bookworm的python镜像
