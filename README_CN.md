@@ -5,7 +5,8 @@
 
 
 ## 特点/依赖
-- 无需安装Android Studio, 直接使用vscode开发, 开箱即用.
+- 无需安装Android Studio, 直接使用vscode开发
+- 至少需要java运行环境
 - 目前仅支持windows => apk(armv8)
 - 无需root权限, 使用proot进入debian环境来启动python服务端程序
 - python版本3.11
