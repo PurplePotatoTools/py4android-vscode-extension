@@ -30,7 +30,7 @@ Use some unconventional methods to develop Android apps in Python within VS Code
 
 
 ## Related to the base APK
-- [fastdev-py4a-base](https://github.com/wailovet/fastdev-py4a-base) , After being packaged into an APK, it is used as a base unpacking program.
+- [fastdev-py4a-base](https://github.com/PurplePotatoTools/fastdev-py4a-base) , After being packaged into an APK, it is used as a base unpacking program.
 - Some tools, including ssh/sftp/webtty , have been simply implemented using [ppobox](https://github.com/PurplePotatoTools/ppobox).
 
 

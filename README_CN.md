@@ -23,7 +23,7 @@
 ![image](https://github.com/user-attachments/assets/ac5608bd-dca2-473e-837a-f02e13af46ef)
 
 ## 基础apk相关
-- [fastdev-py4a-base](https://github.com/wailovet/fastdev-py4a-base) , 打包成apk后作为基础解包程序
+- [fastdev-py4a-base](https://github.com/PurplePotatoTools/fastdev-py4a-base) , 打包成apk后作为基础解包程序
 - 使用 [ppobox](https://github.com/PurplePotatoTools/ppobox) 简单实现了一些工具, 包括ssh,sftp,webtty 等
 
 ## 相关技术
@@ -39,3 +39,7 @@
 - [LuckSiege/PictureSelector](https://github.com/LuckSiege/PictureSelector)
 - [iBotPeaches/Apktool](https://github.com/iBotPeaches/Apktool)
 - [python:3.11-slim-bookworm](https://hub.docker.com/layers/arm64v8/python/3.11-slim-bookworm/images/sha256-383da0c9c870cbbfca5b55e1283343ddbecf0b2247a0a258ab016d87ed374445)
+
+## Contact
+如果你有其他想了解或者技术交流, 可以通过以下方式联系我:
+- 微信 minrszone
