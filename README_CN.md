@@ -16,6 +16,8 @@
 
 
 ## 使用
+#### 0. 确保已经安装Java Runtime
+![image](https://github.com/user-attachments/assets/bdabaf40-1f3e-48a3-a6af-f0980c5b2d26)
 #### 1. 安装releases中的VSIX安装包
 #### 2. 创建项目文件夹使用vscode打开
 #### 3. 在侧边栏打开功能界面, 第一次运行需要初始化工具和环境, 然后点击上方的初始化项目
