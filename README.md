@@ -9,8 +9,8 @@ Use some unconventional methods to develop Android apps in Python within VS Code
 - There's no need to install Android Studio. You can directly use VS Code for development.
 - No root permission is required. Use proot to enter the Debian environment to start the Python server program.
 - Python version 3.11 is used.
-- The interface is implemented using webview.
-
+- The UI is implemented using webview.
+- Use the upload component [LuckSiege/PictureSelector](https://github.com/LuckSiege/PictureSelector)
 
 
 ## Usage
@@ -18,10 +18,26 @@ Use some unconventional methods to develop Android apps in Python within VS Code
 #### 2. Create a project folder and open it using VS Code.
 #### 3. Open the feature interface on the sidebar. For the first run, it is necessary to "Initialize Environment", and then click on "Create Project" at the top. 
 ![image](https://github.com/user-attachments/assets/bfd9d27c-63bf-4ca5-8ed8-e4cc4e373e30)
-
 #### 4. Use adb to connect to the device. Once the connection is successful, the device can be seen, and then click on "Build Install Run (Full Package)". 
 ![image](https://github.com/user-attachments/assets/150392cb-8609-4374-9806-164ad952ccd9)
 
 
 
+## Related to the base APK
+- Some tools, including ssh/sftp/webtty , have been simply implemented using [ppobox](https://github.com/PurplePotatoTools/ppobox).
 
+
+## Other details
+- Use Apktool to unpack and repack APK.
+- Use AnotherTermShellPlugin-Android10Essentials to use the shell through proot on Android 10 and above without root permission.
+- Use flatbuffers as the communication protocol between Python and Java.
+- Use PictureSelector as the image selector.
+- Use the python image from arm64v8/python:3.11-slim-bookworm.
+
+
+## References
+- [green-green-avk/AnotherTermShellPlugin-Android10Essentials](https://github.com/green-green-avk/AnotherTermShellPlugin-Android10Essentials)
+- [google/flatbuffers](https://github.com/google/flatbuffers)
+- [LuckSiege/PictureSelector](https://github.com/LuckSiege/PictureSelector)
+- [iBotPeaches/Apktool](https://github.com/iBotPeaches/Apktool)
+- [python:3.11-slim-bookworm](https://hub.docker.com/layers/arm64v8/python/3.11-slim-bookworm/images/sha256-383da0c9c870cbbfca5b55e1283343ddbecf0b2247a0a258ab016d87ed374445)
