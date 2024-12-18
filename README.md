@@ -21,6 +21,8 @@ Use some unconventional methods to develop Android apps in Python within VS Code
 
 
 ## Usage
+#### 0. Ensure that Java Runtime has been installed. 
+![image](https://github.com/user-attachments/assets/bdabaf40-1f3e-48a3-a6af-f0980c5b2d26)
 #### 1. Install the VSIX installation package in the releases.
 #### 2. Create a project folder and open it using VS Code.
 #### 3. Open the feature interface on the sidebar. For the first run, it is necessary to "Initialize Environment", and then click on "Create Project" at the top. 
