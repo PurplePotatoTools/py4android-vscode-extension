@@ -10,6 +10,7 @@
 - 无需root权限, 使用proot进入debian环境来启动python服务端程序
 - python版本3.11
 - 使用webview实现界面
+- 使用上传组件[LuckSiege/PictureSelector](https://github.com/LuckSiege/PictureSelector)
 
 
 
