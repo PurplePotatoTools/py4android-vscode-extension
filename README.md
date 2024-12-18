@@ -7,7 +7,7 @@
 ![4d64c2fa3aacf65279663e51905653fc](https://github.com/user-attachments/assets/ef84aa2a-04b6-45f8-abf2-a240222686ac)
 
 # fastdev-py4a-vscode-extension
-Use some unconventional methods to develop Android apps in Python within VS Code. It is suitable for the rapid implementation of personal tools or prototypes and for personal learning purposes. Use it cautiously in production environments, and it cannot be published on app stores such as Google Play.
+Use some unconventional methods to develop Android apps in Python within VS Code. It is suitable for the rapid implementation of personal tools or prototypes and for personal learning purposes. Use it cautiously in production environments, [and it cannot be published on app stores such as Google Play](https://github.com/green-green-avk/AnotherTermShellPlugin-Android10Essentials).
 
 
 ## Features/Dependencies
