@@ -12,7 +12,7 @@ Use some unconventional methods to develop Android apps in Python within VS Code
 
 ## Features/Dependencies
 - There's no need to install Android Studio. You can directly use VS Code for development.
-- At least a Java runtime environment is required.
+- At least a [Java runtime environment](https://www.java.com/en/download/) is required.
 - Currently, only Windows => apk (armv8) is supported.
 - No root permission is required. Use proot to enter the Debian environment to start the Python server program.
 - Python version 3.11 is used.
