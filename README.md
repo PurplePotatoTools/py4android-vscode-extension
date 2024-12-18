@@ -1,3 +1,9 @@
+
+<p align="left">
+    English</a>&nbsp ｜ &nbsp<a href="README_CN.md">中文</a>&nbsp
+</p>
+<br><br> 
+
 ![4d64c2fa3aacf65279663e51905653fc](https://github.com/user-attachments/assets/ef84aa2a-04b6-45f8-abf2-a240222686ac)
 
 # fastdev-py4a-vscode-extension
