@@ -42,4 +42,4 @@
 
 ## Contact
 如果你有其他想了解或者技术交流, 可以通过以下方式联系我:
-- 微信 minrszone
+- 微信号 minrszone
