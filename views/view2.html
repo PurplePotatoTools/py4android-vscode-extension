@@ -8,33 +8,34 @@
 <body>
     <!-- row layer -->
     <div id="app" style="display: flex;flex-direction: column;">
-        <div style="flex: 1;" v-if="is_workfolder_init && (app_info?.app_name || app_info?.package || app_info?.version_name || app_info?.version_code)">
+        <div style="flex: 1;"
+            v-if="is_workfolder_init && (app_info?.app_name || app_info?.package || app_info?.version_name || app_info?.version_code)">
             <div style="flex: 1;padding:4px;display: flex;">
-                {{ lang !== 'zh-cn' ? 'app_name' : zh['app_name'] }}
+                {{ lang !== 'zh-cn' ? 'App Name' : zh['App Name'] }}
             </div>
             <div style="flex: 1;padding:4px;display: flex;">
                 <input type="text" style="display: flex;width: 100%;" v-model="app_info.app_name" />
             </div>
             <div style="flex: 1;padding:4px;display: flex;">
-                {{ lang !== 'zh-cn' ? 'package' : zh['package'] }}
+                {{ lang !== 'zh-cn' ? 'Package Name' : zh['Package Name'] }}
             </div>
             <div style="flex: 1;padding:4px;display: flex;">
                 <input type="text" style="display: flex;width: 100%;" v-model="app_info.package" />
             </div>
             <div style="flex: 1;padding:4px;display: flex;">
-                {{ lang !== 'zh-cn' ? 'version name' : zh['version name'] }}
+                {{ lang !== 'zh-cn' ? 'Version Name' : zh['Version Name'] }}
             </div>
             <div style="flex: 1;padding:4px;display: flex;">
                 <input type="text" style="display: flex;width: 100%;" v-model="app_info.version_name" />
             </div>
             <div style="flex: 1;padding:4px;display: flex;">
-                {{ lang !== 'zh-cn' ? 'version code' : zh['version code'] }}
+                {{ lang !== 'zh-cn' ? 'Version Code' : zh['Version Code'] }}
             </div>
             <div style="flex: 1;padding:4px;display: flex;">
                 <input type="text" style="display: flex;width: 100%;" v-model="app_info.version_code" />
             </div>
             <div style="flex: 1;padding:4px;display: flex;">
-                {{ lang !== 'zh-cn' ? 'rootfs path' : zh['rootfs path'] }}
+                {{ lang !== 'zh-cn' ? 'Rootfs' : zh['Rootfs'] }}
             </div>
             <div style="flex: 1;padding:4px;display: flex;">
                 <!-- <input type="text" style="display: flex;width: 100%;" v-model="app_info.rootfs" /> -->
@@ -43,19 +44,19 @@
                 </select>
             </div>
             <div style="flex: 1;padding:4px;display: flex;">
-                {{ lang !== 'zh-cn' ? 'icon text' : zh['icon text'] }}
+                {{ lang !== 'zh-cn' ? 'Icon Text' : zh['Icon Text'] }}
             </div>
             <div style="flex: 1;padding:4px;display: flex;">
                 <input type="text" style="display: flex;width: 100%;" v-model="app_info.icon_text" />
             </div>
             <div style="flex: 1;padding:4px;display: flex;">
-                {{ lang !== 'zh-cn' ? 'icon' : zh['icon'] }}
+                {{ lang !== 'zh-cn' ? 'Icon' : zh['Icon'] }}
             </div>
             <div style="flex: 1;padding:4px;display: flex;">
                 <input type="text" style="display: flex;width: 100%;" v-model="app_info.icon" />
             </div>
             <div style="flex: 1;padding:4px;display: flex;">
-                {{ lang !== 'zh-cn' ? 'icon preview' : zh['icon preview'] }}
+                {{ lang !== 'zh-cn' ? 'Icon Preview' : zh['Icon Preview'] }}
             </div>
             <div style="flex: 1;padding:4px;display: flex;">
                 <span id="icon" style="width: 256px;height: 256px;zoom: 0.5;display: inline-flex;"
@@ -67,10 +68,10 @@
 
             <div style="flex: 1;padding:4px;display: flex;">
                 <button @click="command('get_app_info')">
-                    {{ lang !== 'zh-cn' ? 'refresh config' : zh['refresh config'] }}
+                    {{ lang !== 'zh-cn' ? 'Refresh Config' : zh['Refresh Config'] }}
                 </button>
                 <button @click="command('save_app_info', app_info);">
-                    {{ lang !== 'zh-cn' ? 'save config' : zh['save config'] }}
+                    {{ lang !== 'zh-cn' ? 'Save Config' : zh['Save Config'] }}
                 </button>
             </div>
 
@@ -83,13 +84,13 @@
                 </div>
                 <div style="flex: 1;padding:4px;">
                     <button @click="command('extension.FastdevPy4a.ClearTemp')">
-                        {{ lang !== 'zh-cn' ? 'Clean up the build cache space' : zh['Clean up the build cache space'] }}
+                        {{ lang !== 'zh-cn' ? 'Clean Build Cache' : zh['Clean Build Cache'] }}
                     </button>
                 </div>
             </template>
             <div style="flex: 1;padding:4px;">
                 <button @click="command('extension.FastdevPy4a.Init')">
-                    {{ lang !== 'zh-cn' ? 'Initialize tools and environment' : zh['Initialize tools and environment'] }}
+                    {{ lang !== 'zh-cn' ? 'Initialize Environment' : zh['Initialize Environment'] }}
                 </button>
             </div>
 
