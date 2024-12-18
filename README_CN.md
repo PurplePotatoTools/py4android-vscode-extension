@@ -5,8 +5,8 @@
 
 
 ## 特点/依赖
+- 无需安装Android Studio, 直接使用vscode开发, 开箱即用.
 - 目前仅支持windows => apk(armv8)
-- 无需安装Android Studio, 直接使用vscode开发
 - 无需root权限, 使用proot进入debian环境来启动python服务端程序
 - python版本3.11
 - 使用webview实现界面
@@ -23,6 +23,7 @@
 ![image](https://github.com/user-attachments/assets/ac5608bd-dca2-473e-837a-f02e13af46ef)
 
 ## 基础apk相关
+- [fastdev-py4a-base](https://github.com/wailovet/fastdev-py4a-base) , 打包成apk后作为基础解包程序
 - 使用 [ppobox](https://github.com/PurplePotatoTools/ppobox) 简单实现了一些工具, 包括ssh,sftp,webtty 等
 
 ## 相关技术

@@ -11,8 +11,8 @@ Use some unconventional methods to develop Android apps in Python within VS Code
 
 
 ## Features/Dependencies
-- Currently, only Windows => apk (armv8) is supported.
 - There's no need to install Android Studio. You can directly use VS Code for development.
+- Currently, only Windows => apk (armv8) is supported.
 - No root permission is required. Use proot to enter the Debian environment to start the Python server program.
 - Python version 3.11 is used.
 - The UI is implemented using webview.
@@ -30,6 +30,7 @@ Use some unconventional methods to develop Android apps in Python within VS Code
 
 
 ## Related to the base APK
+- [fastdev-py4a-base](https://github.com/wailovet/fastdev-py4a-base) , After being packaged into an APK, it is used as a base unpacking program.
 - Some tools, including ssh/sftp/webtty , have been simply implemented using [ppobox](https://github.com/PurplePotatoTools/ppobox).
 
 
