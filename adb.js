@@ -10,6 +10,9 @@ function getAdbPath() {
 }
 
 const ADB = {
+    getAdbPath() {
+        return _adbPath;
+    },
     init(context) {
         let tools = context.asAbsolutePath("tools");
         let adbPath = fpath.join(tools, "platform-tools", "adb.exe");

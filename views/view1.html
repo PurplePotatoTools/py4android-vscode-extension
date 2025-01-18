@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <script src="vue.js"></script> 
+    <script src="vue.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -20,6 +20,7 @@
                     <button @click="command('extension.FastdevPy4a.CreateProject')">
                         {{ lang !== 'zh-cn' ? 'Create Project' : zh['Create Project'] }}
                     </button>
+
                 </div>
                 <template v-else>
                     <template v-if="adb_info.devices.length > 0">
@@ -29,11 +30,12 @@
                             <div v-for="device in adb_info.devices" style="display: flex;">
                                 <p>{{ device }}</p>
                             </div>
-                        
+
                         </div>
 
-                        <div style="flex: 1;padding:4px;"> 
-                            <template v-if="!is_run && app_info?.dev_mode && adb_info?.package_info && adb_info?.package_info != ''"> 
+                        <div style="flex: 1;padding:4px;">
+                            <template
+                                v-if="!is_run && app_info?.dev_mode && adb_info?.package_info && adb_info?.package_info != ''">
                                 <button @click="command('extension.FastdevPy4a.PatchFastRun')">
                                     {{ lang !== 'zh-cn' ? 'Patch Fast Run' : zh['Patch Fast Run'] }}
                                 </button>
@@ -60,9 +62,36 @@
                                 zh["No Devices :You need to try adb connect to connect to the device"] }}</p>
                         </div>
                     </template>
-                </template>
 
+                    
+
+                    <div style="padding:4px;display: flex;"> 
+                        <button @click="command('MoreSettings')">
+                            {{ lang !== 'zh-cn' ? 'More Settings' : zh['More Settings'] }}
+                        </button>
+                    </div>
+                </template>
             </template>
+
+
+            <template v-if="is_init_tools">
+                <div style="flex: 1;padding:4px;display: flex;">
+                    <input style="display: flex;width: 100%;" v-model="dependency"></input>
+                    <button @click="command('extension.FastdevPy4a.DependencyInstallation')">
+                        {{ lang !== 'zh-cn' ? 'Dependency Download' : zh['Dependency Download'] }}
+                    </button>
+                </div>
+                <div style="flex: 1;padding:4px;">
+                    <button @click="command('extension.FastdevPy4a.ClearTemp')">
+                        {{ lang !== 'zh-cn' ? 'Clean Build Cache' : zh['Clean Build Cache'] }}
+                    </button>
+                </div>
+            </template>
+            <div style="flex: 1;padding:4px;">
+                <button @click="command('extension.FastdevPy4a.Init')">
+                    {{ lang !== 'zh-cn' ? 'Initialize Environment' : zh['Initialize Environment'] }}
+                </button>
+            </div>
         </div>
         <!-- loading -->
         <div style="flex: 1;display: flex;justify-content: center;align-items: center;z-index:999999;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: var(--vscode-editor-background);opacity:0.7;"

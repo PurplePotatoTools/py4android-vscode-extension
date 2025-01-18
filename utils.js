@@ -106,7 +106,7 @@ const Utils = {
             let uploadCmd = `${ppoboxExe} gosftp-push --port=${sftpPort} --local=${fpath.join(
                 workspace,
                 fileName
-            )} --remote=/root/python_app/${fileName} --username=root --password=root`;
+            )} --remote=/root/python_app/${fileName.replace(/\\/g, "/")} --username=root --password=root`;
             await Utils.callInInteractiveTerminal("push file", uploadCmd, false);
         } catch (error) {
             console.log("uploadResp error:", error);
@@ -216,6 +216,11 @@ const Utils = {
                     // });
                     // console.log("uploadResp:", uploadResp);
 
+                    console.log(`uploadResp src element1: ${element} ${typeof element}`);
+                    if (element.indexOf("\\") != -1) {
+                        element = element.replace(/\\/g, "/");
+                    }
+                    console.log(`uploadResp src element2: ${element}`);
                     pushCmds.push(
                         `${ppoboxExe} gosftp-push --port=${sftpPort} --local=${src} --remote=/root/python_app/${element} --username=root --password=root`
                     );
@@ -463,6 +468,7 @@ const Utils = {
         });
     },
     logcatShow(packageName) {
+        console.log(`${ADB.getAdbPath()} logcat -s ${packageName} python.stdout -s ${packageName} python.stderr`);
         try {
             execSync(`${ADB.getAdbPath()} logcat -c`);
         } catch (error) {}

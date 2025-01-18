@@ -25,6 +25,7 @@ var app = new Vue({
             "No Devices :You need to try adb connect to connect to the device": "没有设备: 你需要尝试adb connect连接设备",
             "Refresh Config": "刷新配置",
             "Save Config": "保存配置",
+            "More Settings": "更多设置",
         },
         app_info: {
             app_name: "",
@@ -108,9 +109,7 @@ window.addEventListener("message", (event) => {
             break;
     }
 });
-
-setInterval(() => {
-    app.command("all_info");
-}, 2000);
+ 
 
 app.command("get_app_info");
+app.command("all_info");

@@ -22,6 +22,14 @@ let commandArgs = {};
 
 let globalLocker = false;
 
+// 绑定globalLocker的getter和setter
+function setGlobalLocker(value) {
+    globalLocker = value;
+    if (currentWebviewViewArgs) {
+        webviewMessageHandlers.all_info(currentWebviewViewArgs.context, currentWebviewViewArgs.webviewView, currentWebviewViewArgs.message);
+    }
+}
+
 let registerCommandFuns = {
     "extension.FastdevPy4a.OneFilePatchFastRun": async function (context) {
         mconsole.show();
@@ -49,6 +57,7 @@ let registerCommandFuns = {
         let packageName = configData.package;
         mconsole.appendLine(`${T("packageName")}: ${packageName}`);
 
+        Utils.logcatShow(packageName);
         // 对当前路径做md5
         let md5_workspace = md5(workspace);
 
@@ -103,6 +112,8 @@ let registerCommandFuns = {
         // 将assetsDir中所有文件使用adb上传到 /sdcard/Android/data/包名/files/patch/python_app/
         Utils.context = context;
         Utils.syncToRemotDiffFiles(packageName);
+
+        Utils.logcatShow(packageName);
     },
     "extension.FastdevPy4a.BuildInstallRun": async function (context) {
         mconsole.show();
@@ -549,7 +560,19 @@ let webviewMessageHandlers = {
             data: data,
         });
     },
+    "MoreSettings": async function (context, webviewView, message) {
+        console.log("MoreSettings"); 
+        let workspace = await Utils.getWorkspaceFolder();
+        let configJson = fpath.join(workspace, "app.json");
+        if (fs.existsSync(configJson)) {
+            vscode.window.showTextDocument(vscode.Uri.file(configJson));
+        } else {
+            vscode.window.showErrorMessage("config.json not exists");
+        }
+    },
 };
+
+var currentWebviewViewArgs = null;
 
 function createSidebarPanel(context, view) {
     var sidebarPanel = {
@@ -566,6 +589,11 @@ function createSidebarPanel(context, view) {
                     if (webviewMessageHandlers[message.command]) {
                         webviewMessageHandlers[message.command](context, webviewView, message);
                     } else {
+                        currentWebviewViewArgs = {
+                            context: context,
+                            webviewView: webviewView,
+                            message: message,
+                        };
                         if (message.args) {
                             commandArgs = message.args;
                         }
@@ -584,8 +612,7 @@ function createSidebarPanel(context, view) {
 function registerCoreCommand(context) {
     ADB.init(context);
     context.subscriptions.push(
-        vscode.window.registerWebviewViewProvider("view1", createSidebarPanel(context, "views/view1.html")),
-        vscode.window.registerWebviewViewProvider("view2", createSidebarPanel(context, "views/view2.html"))
+        vscode.window.registerWebviewViewProvider("view1", createSidebarPanel(context, "views/view1.html"))
     );
 
     for (const key in registerCommandFuns) {
@@ -598,15 +625,17 @@ function registerCoreCommand(context) {
                 }
                 mconsole.show();
                 console.log(`command start: ${key}`);
-                globalLocker = true;
+                setGlobalLocker(true);
                 try {
                     await element(context);
                 } catch (error) {
-                    globalLocker = false;
+                    // globalLocker = false;
+                    setGlobalLocker(false);
                     mconsole.appendLine(error);
                     vscode.window.showErrorMessage(error);
                 }
-                globalLocker = false;
+                // globalLocker = false;
+                setGlobalLocker(false);
                 console.log(`command end: ${key}`);
             })
         );

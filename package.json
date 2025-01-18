@@ -1,6 +1,6 @@
 {
-  "name": "fastdev-py4android",
-  "displayName": "fastdev-py4android",
+  "name": "fastdev-py4a",
+  "displayName": "fastdev-py4a",
   "description": "Android fast development implemented from Python.",
   "publisher": "mz",
   "repository": {
@@ -32,12 +32,7 @@
           "id": "view1",
           "name": "%debug_and_run%",
           "type": "webview"
-        },
-        {
-          "id": "view2",
-          "name": "%setting%",
-          "type": "webview"
-        }
+        } 
       ]
     },
     "menus": {
